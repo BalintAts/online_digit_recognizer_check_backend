@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using online_digit_recognizer_backend.python_handlers;
 
 namespace online_digit_recognizer_backend.Controllers
 {
@@ -27,8 +28,9 @@ namespace online_digit_recognizer_backend.Controllers
 
         // POST: api/Digit
         [HttpPost]
-        public void Post([FromBody] string value)
+        public string Post([FromBody] string value)
         {
+            return PythonHandler.GetDigitFromPyScript(value);
         }
 
         // PUT: api/Digit/5

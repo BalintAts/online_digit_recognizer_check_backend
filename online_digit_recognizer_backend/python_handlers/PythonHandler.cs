@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace online_digit_recognizer_backend.python_handlers
 {
-    public class PythonHandler
+    public static class PythonHandler
     {
-        public string GetDigitFromPyScript(int[] data)
+        public static string GetDigitFromPyScript(string dataString)
         {
             ProcessStartInfo runPyScript = new ProcessStartInfo();
             //python interprater location
